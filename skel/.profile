@@ -17,6 +17,8 @@ export HISTSIZE=10000000
 
 # firefox hardware acceleration
 export MOZ_USE_OMTC=1
+export MOZ_ACCELERATED=1
+export MOZ_WEBRENDER=1
 
 # Preferred editor
 export VISUAL="vim"
