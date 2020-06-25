@@ -1,1 +1,2 @@
+source /etc/profile
 source $HOME/.profile
