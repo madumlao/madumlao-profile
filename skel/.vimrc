@@ -18,7 +18,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
-Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
 
