@@ -34,7 +34,7 @@ export THOR_MERGE="meld"
 
 # gtk options
 # enable "command pallete"
-export GTK3_MODULES="/usr/lib/x86_64-linux-gnu/libplotinus/libplotinus.so:$GTK3_MODULES"
+# export GTK3_MODULES="/usr/lib/x86_64-linux-gnu/libplotinus/libplotinus.so:$GTK3_MODULES"
 
 # Ubuntu make installation of Ubuntu Make binary symlink
 export PATH="$HOME/.local/share/umake/bin:$PATH"
