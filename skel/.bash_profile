@@ -7,3 +7,8 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 source "$HOME/.profile"
+
+# source kubernetes shell completion
+if [ "$PROFILE_ENABLE_KUBECTL" ]; then
+  source <(kubectl completion bash)
+fi
