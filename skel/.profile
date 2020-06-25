@@ -48,28 +48,39 @@ export LD_LIBRARY_PATH="$HOME/lib:$LD_LIBRARY_PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # phpenv
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
+if [ -z "$PHPENV_DISABLE" ]; then
+	export PATH="$HOME/.phpenv/bin:$PATH"
+	eval "$(phpenv init -)"
 
-# php-build
-export PHP_BUILD_CONFIGURE_OPTS="--with-ldap=/usr --with-ldap-sasl=/usr --with-mhash=/usr --with-mysql-sock=/run/mysqld/mysqld.sock --with-apxs2"
-export PHP_BUILD_KEEP_OBJECT_FILES=y
+	# php-build
+	export PHP_BUILD_CONFIGURE_OPTS="--with-pear --with-ldap=/usr --with-ldap-sasl=/usr --with-mhash=/usr --with-mysql-sock=/run/mysqld/mysqld.sock"
+	export PHP_BUILD_KEEP_OBJECT_FILES=y
+fi
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -z "$RBENV_DISABLE" ]; then
+	export PATH="$HOME/.rbenv/bin:$PATH"
+	eval "$(rbenv init -)"
+fi
 
 # jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+if [ -z "$JENV_DISABLE" ]; then
+	export PATH="$HOME/.jenv/bin:$PATH"
+	eval "$(jenv init -)"
+fi
 
 # nenv
-export PATH="$HOME/.nenv/bin:$PATH"
-eval "$(nenv init -)"
+if [ -z "$NENV_DISABLE" ]; then
+	export PATH="$HOME/.nenv/bin:$PATH"
+	eval "$(nenv init -)"
+fi
 
 # pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -z "$PYENV_DISABLE" ]; then
+	export PATH="$HOME/.pyenv/bin:$PATH"
+	export PIPENV_VENV_IN_PROJECT=1
+	eval "$(pyenv init -)"
+fi
 
 # perl
 export PATH="/home/madumlao/perl5/bin${PATH:+:${PATH}}"; export PATH;
