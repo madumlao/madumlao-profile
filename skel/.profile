@@ -12,6 +12,8 @@ umask 026
 # effectively unlimited history
 export HISTSIZE=10000000
 
+# default profile-specific settings
+PROFILE_ENABLE_KUBECTL=y
 
 # firefox hardware acceleration
 export MOZ_USE_OMTC=1
@@ -21,6 +23,7 @@ export MOZ_WEBRENDER=
 # Preferred editor
 export VISUAL="vim"
 export EDITOR="vim"
+export THOR_MERGE="meld"
 
 # source local variables
 # will override any variables defined above
