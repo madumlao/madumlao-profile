@@ -12,9 +12,6 @@ umask 026
 # effectively unlimited history
 export HISTSIZE=10000000
 
-# source local variables
-[ -f "$HOME/.profile-local" ] && source "$HOME/.profile-local"
-[ -f "$HOME/.profile-private" ] && source "$HOME/.profile-private"
 
 # firefox hardware acceleration
 export MOZ_USE_OMTC=1
@@ -24,6 +21,13 @@ export MOZ_WEBRENDER=
 # Preferred editor
 export VISUAL="vim"
 export EDITOR="vim"
+
+# source local variables
+# will override any variables defined above
+[ -f "$HOME/.profile-local" ] && source "$HOME/.profile-local"
+[ -f "$HOME/.profile-private" ] && source "$HOME/.profile-private"
+# end preferences - switched controls below
+
 
 # gtk options
 # enable "command pallete"
