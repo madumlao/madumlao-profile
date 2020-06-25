@@ -12,8 +12,9 @@ umask 026
 # effectively unlimited history
 export HISTSIZE=10000000
 
-# source private variables
-[ -f "$HOME/.profile-priivate" ] && source "$HOME/.profile-private"
+# source local variables
+[ -f "$HOME/.profile-local" ] && source "$HOME/.profile-local"
+[ -f "$HOME/.profile-private" ] && source "$HOME/.profile-private"
 
 # firefox hardware acceleration
 export MOZ_USE_OMTC=1
