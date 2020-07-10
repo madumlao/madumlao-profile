@@ -24,7 +24,7 @@ export MOZ_WEBRENDER=
 export VISUAL="vim"
 export EDITOR="vim"
 export THOR_MERGE="meld"
-export PAGER="less -r"
+export PAGER="less -r -i"
 
 # source local variables
 # will override any variables defined above
