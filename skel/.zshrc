@@ -71,3 +71,8 @@ SAVEHIST=$HISTSIZE
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 setopt HIST_LEX_WORDS            # parse quotes when parsing history
+
+# set GPG_TTY
+if [ "$GPG_TTY" = "" ]; then
+	export GPG_TTY=$(tty)
+fi
