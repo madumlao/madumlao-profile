@@ -120,3 +120,7 @@ fi
 if [ "$GPG_TTY" = "" ]; then
   export GPG_TTY=$(tty)
 fi
+
+# override local settings with local shell files
+[ -f "$HOME/.rc-local" ] && source "$HOME/.rc-local"
+[ -f "$HOME/.bashrc-local" ] && source "$HOME/.bashrc-local"

@@ -76,3 +76,9 @@ setopt HIST_LEX_WORDS            # parse quotes when parsing history
 if [ "$GPG_TTY" = "" ]; then
 	export GPG_TTY=$(tty)
 fi
+
+# override local settings with local shell files
+emulate bash
+[ -f "$HOME/.rc-local" ] && source "$HOME/.rc-local"
+emulate zsh
+[ -f "$HOME/.zshrc-local" ] && source "$HOME/.zshrc-local"
