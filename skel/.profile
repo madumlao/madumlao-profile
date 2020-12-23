@@ -32,6 +32,9 @@ export PAGER="less -r -i"
 [ -f "$HOME/.profile-private" ] && source "$HOME/.profile-private"
 # end preferences - switched controls below
 
+# force enable sbin paths in environments that dont turn them on
+echo "$PATH" | egrep -q ':?/usr/sbin:?' || export PATH="$PATH:/usr/sbin"
+echo "$PATH" | egrep -q ':?/sbin:?'     || export PATH="$PATH:/sbin"
 
 # gtk options
 # enable "command pallete"
