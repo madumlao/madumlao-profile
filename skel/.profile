@@ -71,7 +71,7 @@ fi
 
 # jenv
 JENV_ROOT="${JENV_ROOT:-${HOME}/.jenv/bin}"
-if [ -z "$JENV_DISABLE" ] && [ -d "$JENV_ROOT/bin"]; then
+if [ -z "$JENV_DISABLE" ] && [ -d "$JENV_ROOT/bin" ]; then
 	export PATH="$HOME/.jenv/bin:$PATH"
 	eval "$(jenv init -)"
 fi
@@ -85,7 +85,7 @@ fi
 
 # pyenv
 PYENV_ROOT="${PYENV_ROOT:-${HOME}/.pynev/bin}"
-if [ -z "$PYENV_DISABLE" ] && [ -d "$PYENV_ROOT/bin]; then
+if [ -z "$PYENV_DISABLE" ] && [ -d "$PYENV_ROOT/bin" ]; then
 	export PATH="$HOME/.pyenv/bin:$PATH"
 	export PIPENV_VENV_IN_PROJECT=1
 	eval "$(pyenv init -)"
