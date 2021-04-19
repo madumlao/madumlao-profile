@@ -3,6 +3,9 @@ APP_DIR="$(dirname "$0")"
 cd "$APP_DIR"
 APP_DIR="$(pwd)"
 
+echo "Install zsh and friends"
+sudo apt install zsh command-not-found
+
 echo "Install oh-my-zsh and plugins"
 if ! [ -d .oh-my-zsh ]; then
   git clone https://github.com/ohmyzsh/ohmyzsh "$HOME/.oh-my-zsh"
