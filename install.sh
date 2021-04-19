@@ -3,6 +3,17 @@ APP_DIR="$(dirname "$0")"
 cd "$APP_DIR"
 APP_DIR="$(pwd)"
 
+echo "Install oh-my-zsh and plugins"
+if ! [ -d .oh-my-zsh ]; then
+  git clone https://github.com/ohmyzsh/ohmyzsh "$HOME/.oh-my-zsh"
+fi
+
+(
+  cd "$HOME/.oh-my-zsh/plugins"
+  git clone https://github.com/zsh-users/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting
+)
+
 SKEL_DIR="$APP_DIR/skel"
 BACK_DIR="$APP_DIR/backup"
 
