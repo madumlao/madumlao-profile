@@ -32,3 +32,9 @@ for x in $(ls -a); do
   echo -ne "Linking: " && ln -srv "$(pwd)/$x" "$HOME"
 done
 IFS="$OLDIFS"
+
+echo "Install vim and friends"
+sudo apt install vim-nox git
+mkdir -pv "$HOME/.vim/bundle"
+git clone https://github.com/VundleVim/Vundle "$HOME/.vim/bundle/Vundle.vim"
+vim +PluginInstall +qall
