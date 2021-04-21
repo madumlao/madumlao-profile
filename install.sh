@@ -21,6 +21,19 @@ fi
   git clone https://github.com/zsh-users/zsh-syntax-highlighting
 )
 
+echo "Changing default shell"
+ZSH_PATH="$(which zsh)"
+if sudo -l chsh -s $ZSH_PATH $USER; then
+  sudo chsh -s $ZSH_PATH $USER
+elif sudo -l usermod -s $ZSH_PATH $USER; then
+  sudo usermod -s $ZSH_PATH $USER
+else
+  echo "Cannot change shell using sudo, trying password"
+  if ! chsh -s "$ZSH_PATH"; then
+    echo "Unable to change shell to $ZSH_PATH, please change shell manually"
+  fi
+fi
+
 SKEL_DIR="$APP_DIR/skel"
 BACK_DIR="$APP_DIR/backup"
 
