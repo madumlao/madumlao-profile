@@ -63,28 +63,28 @@ if [ -z "$PHPENV_DISABLE" ] && [ -d "$PHPENV_ROOT/bin" ]; then
 fi
 
 # rbenv
-RBENV_ROOT="${RBENV_ROOT:-${HOME}/.rbenv/bin}"
+RBENV_ROOT="${RBENV_ROOT:-${HOME}/.rbenv}"
 if [ -z "$RBENV_DISABLE" ] && [ -d "$RBENV_ROOT/bin" ]; then
 	export PATH="$HOME/.rbenv/bin:$PATH"
 	eval "$(rbenv init -)"
 fi
 
 # jenv
-JENV_ROOT="${JENV_ROOT:-${HOME}/.jenv/bin}"
+JENV_ROOT="${JENV_ROOT:-${HOME}/.jenv}"
 if [ -z "$JENV_DISABLE" ] && [ -d "$JENV_ROOT/bin" ]; then
 	export PATH="$HOME/.jenv/bin:$PATH"
 	eval "$(jenv init -)"
 fi
 
 # nenv
-NENV_ROOT="${NENV_ROOT:-${HOME}/.nenv/bin}"
+NENV_ROOT="${NENV_ROOT:-${HOME}/.nenv}"
 if [ -z "$NENV_DISABLE" ] && [ -d "$NENV_ROOT/bin" ]; then
 	export PATH="$HOME/.nenv/bin:$PATH"
 	eval "$(nenv init -)"
 fi
 
 # pyenv
-PYENV_ROOT="${PYENV_ROOT:-${HOME}/.pynev/bin}"
+PYENV_ROOT="${PYENV_ROOT:-${HOME}/.pynev}"
 if [ -z "$PYENV_DISABLE" ] && [ -d "$PYENV_ROOT/bin" ]; then
 	export PATH="$HOME/.pyenv/bin:$PATH"
 	export PIPENV_VENV_IN_PROJECT=1
