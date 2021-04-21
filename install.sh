@@ -4,7 +4,11 @@ cd "$APP_DIR"
 APP_DIR="$(pwd)"
 
 echo "Install zsh and friends"
-sudo apt install zsh command-not-found
+if sudo -l apt; then
+  sudo apt install zsh command-not-found
+else
+  echo "Unable to autoinstall zsh and friends, please install manually"
+fi
 
 echo "Install oh-my-zsh and plugins"
 if ! [ -d .oh-my-zsh ]; then
@@ -33,8 +37,12 @@ for x in $(ls -a); do
 done
 IFS="$OLDIFS"
 
-echo "Install vim and friends"
-sudo apt install vim-nox git
+echo "Install vim-nox and friends"
+if sudo -l apt; then
+  sudo apt install vim-nox git
+else
+  echo "Unable to autoinstall vim-nox and friends, please install manually"
+fi
 mkdir -pv "$HOME/.vim/bundle"
 git clone https://github.com/VundleVim/Vundle.vim "$HOME/.vim/bundle/Vundle.vim"
 vim +PluginInstall +qall
