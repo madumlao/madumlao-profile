@@ -84,7 +84,7 @@ if [ -z "$NENV_DISABLE" ] && [ -d "$NENV_ROOT/bin" ]; then
 fi
 
 # pyenv
-PYENV_ROOT="${PYENV_ROOT:-${HOME}/.pynev}"
+PYENV_ROOT="${PYENV_ROOT:-${HOME}/.pyenv}"
 if [ -z "$PYENV_DISABLE" ] && [ -d "$PYENV_ROOT/bin" ]; then
 	export PATH="$HOME/.pyenv/bin:$PATH"
 	export PIPENV_VENV_IN_PROJECT=1
