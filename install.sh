@@ -36,5 +36,5 @@ IFS="$OLDIFS"
 echo "Install vim and friends"
 sudo apt install vim-nox git
 mkdir -pv "$HOME/.vim/bundle"
-git clone https://github.com/VundleVim/Vundle "$HOME/.vim/bundle/Vundle.vim"
+git clone https://github.com/VundleVim/Vundle.vim "$HOME/.vim/bundle/Vundle.vim"
 vim +PluginInstall +qall
