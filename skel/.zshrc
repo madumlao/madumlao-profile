@@ -58,7 +58,7 @@ setopt NO_HUP
 setopt NO_CHECK_JOBS
 
 # command suggestions
-source /etc/zsh_command_not_found
+[ -f "/etc/zsh_command_not_found" ] && source /etc/zsh_command_not_found
 
 # rebuild autocompletion always
 zstyle ":completion:*:commands" rehash 1
