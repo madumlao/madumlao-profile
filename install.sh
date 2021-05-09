@@ -11,7 +11,7 @@ else
 fi
 
 echo "Install oh-my-zsh and plugins"
-if ! [ -d .oh-my-zsh ]; then
+if ! [ -d "$HOME/.oh-my-zsh" ]; then
   git clone https://github.com/ohmyzsh/ohmyzsh "$HOME/.oh-my-zsh"
 fi
 
