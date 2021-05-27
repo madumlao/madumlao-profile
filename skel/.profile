@@ -88,7 +88,7 @@ PYENV_ROOT="${PYENV_ROOT:-${HOME}/.pyenv}"
 if [ -z "$PYENV_DISABLE" ] && [ -d "$PYENV_ROOT/bin" ]; then
 	export PATH="$HOME/.pyenv/bin:$PATH"
 	export PIPENV_VENV_IN_PROJECT=1
-	eval "$(pyenv init -)"
+	eval "$(pyenv init -|grep -v '^echo')"
 fi
 
 # perl
