@@ -67,5 +67,5 @@ vim +PluginInstall +qall
 echo "Set vim-nox as the default system editor"
 VIM_PATH="$(which vim.nox)"
 if [ -x "$VIM_PATH" ]; then
-  sudo update-alternatives --config editor "$VIM_PATH"
+  sudo update-alternatives --set editor "$VIM_PATH"
 fi
