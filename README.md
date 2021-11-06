@@ -21,3 +21,9 @@ Backing up original profile under /home/madumlao/Projects/madumlao-profile/backu
 '/home/madumlao/.zshrc' -> '/home/madumlao/Projects/madumlao-profile/backup/.zshrc'
 '/home/madumlao/.zshrc' -> 'Projects/madumlao-profile/skel/.zshrc'
 ~~~
+
+You can add custom variables on the current user by editing `.profile-local`.
+
+You can put passwords, keys, etc in `.profile-private`.
+
+Both files are force git-ignored. No other special protections are made to them.
