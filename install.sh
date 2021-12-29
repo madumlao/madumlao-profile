@@ -49,6 +49,7 @@ OLDIFS="$IFS"
 IFS=$'\n'
 for x in $(ls -a); do
   [ "$x" = '.' ] || [ "$x" = '..' ] && continue;
+  [ "$x" = '.profile-local' ] || [ "$x" = '.profile-private' ] && continue;
   [ -r "$HOME/$x" ] && echo -ne "Backup: " && mv -v "$HOME/$x" "$BACK_DIR"
   echo -ne "Linking: " && ln -srv "$(pwd)/$x" "$HOME"
 done
