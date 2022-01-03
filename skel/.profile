@@ -58,7 +58,7 @@ if [ -z "$PHPENV_DISABLE" ] && [ -d "$PHPENV_ROOT/bin" ]; then
 	eval "$(phpenv init -)"
 
 	# php-build
-	export PHP_BUILD_CONFIGURE_OPTS="--with-pear --with-ldap --with-ldap-sasl --with-mhash --with-mysql-sock=/run/mysqld/mysqld.sock"
+	export PHP_BUILD_CONFIGURE_OPTS="--with-libdir=lib --with-pear --with-ldap --with-ldap-sasl --with-mhash --with-mysql-sock=/run/mysqld/mysqld.sock"
 	export PHP_BUILD_KEEP_OBJECT_FILES=y
 fi
 
