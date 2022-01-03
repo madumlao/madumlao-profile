@@ -52,7 +52,7 @@ export LD_LIBRARY_PATH="$HOME/lib:$LD_LIBRARY_PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # phpenv
-PHPENV_ROOT="${PHPENV_ROOT:-${HOME}/.phpenv/bin}"
+PHPENV_ROOT="${PHPENV_ROOT:-${HOME}/.phpenv}"
 if [ -z "$PHPENV_DISABLE" ] && [ -d "$PHPENV_ROOT/bin" ]; then
 	export PATH="$HOME/.phpenv/bin:$PATH"
 	eval "$(phpenv init -)"
