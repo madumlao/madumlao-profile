@@ -22,3 +22,7 @@ Plugin 'tpope/vim-sleuth'
 call vundle#end()
 
 filetype plugin indent on
+
+if filereadable(".vimrc-local")
+	source .vimrc-local
+endif
