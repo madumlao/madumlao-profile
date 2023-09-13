@@ -76,11 +76,11 @@ if [ -z "$JENV_DISABLE" ] && [ -d "$JENV_ROOT/bin" ]; then
 	eval "$(jenv init -)"
 fi
 
-# nenv
-NENV_ROOT="${NENV_ROOT:-${HOME}/.nenv}"
-if [ -z "$NENV_DISABLE" ] && [ -d "$NENV_ROOT/bin" ]; then
-	export PATH="$HOME/.nenv/bin:$PATH"
-	eval "$(nenv init -)"
+# nodenv
+NODENV_ROOT="${NODENV_ROOT:-$HOME/.nodenv}"
+if [ -z "$NODENV_DISABLE" ] && [ -d "$NODENV_ROOT/bin" ]; then
+	export PATH="$HOME/.nodenv/bin:$PATH"
+	eval "$(nodenv init -)"
 fi
 
 # pyenv
