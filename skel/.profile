@@ -2,6 +2,7 @@
 export TZ="Asia/Manila"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.crypt/bin:$PATH"
 
 # set your umask
@@ -58,7 +59,7 @@ if [ -z "$PHPENV_DISABLE" ] && [ -d "$PHPENV_ROOT/bin" ]; then
 	eval "$(phpenv init -)"
 
 	# php-build
-	export PHP_BUILD_CONFIGURE_OPTS="--with-libdir=lib --with-pear --with-ldap --with-ldap-sasl --with-mhash --with-mysql-sock=/run/mysqld/mysqld.sock"
+	export PHP_BUILD_CONFIGURE_OPTS="--with-libdir=lib --with-pear --with-ldap --with-ldap-sasl --with-mhash --with-sodium --with-gmp --with-mysql-sock=/run/mysqld/mysqld.sock"
 	export PHP_BUILD_KEEP_OBJECT_FILES=y
 fi
 
@@ -101,3 +102,6 @@ export PERL5LIB="/home/madumlao/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; expor
 export PERL_LOCAL_LIB_ROOT="/home/madumlao/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 export PERL_MB_OPT="--install_base \"/home/madumlao/perl5\""; export PERL_MB_OPT;
 export PERL_MM_OPT="INSTALL_BASE=/home/madumlao/perl5"; export PERL_MM_OPT;
+
+# aliases
+alias less='less -i -r'
