@@ -3,6 +3,11 @@ APP_DIR="$(dirname "$0")"
 cd "$APP_DIR"
 APP_DIR="$(pwd)"
 
+echo "Run an apt update"
+if sudo -l apt; then
+  sudo apt update
+fi
+
 echo "Install zsh and friends"
 if sudo -l apt; then
   sudo apt install zsh command-not-found
