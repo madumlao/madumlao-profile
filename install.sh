@@ -1,12 +1,36 @@
 #!/bin/bash
-APP_DIR="$(dirname "$0")"
-cd "$APP_DIR"
-APP_DIR="$(pwd)"
+if ! [ -t 0 ]; then
+  echo "exec from pipe"
+  DOWNLOAD_APP=y
+  APP_DIR="$HOME/.local/share/madumlao-profile"
+else
+  DOWNLOAD_APP=
+  APP_DIR="$(dirname "$0")"
+fi
 
 echo "Run an apt update"
 if sudo -l apt; then
   sudo apt update
+else
+  echo "Unable to run apt commands, please install manually"
 fi
+
+echo "Install git and friends"
+if sudo -l apt; then
+  sudo apt install git
+else
+  echo "Unable to autoinstall git and friends, please install manually"
+fi
+
+if [ "$DOWNLOAD_APP" ]; then
+  echo "Downloading master copy"
+  mkdir -pv "$APP_DIR"
+  git clone https://github.com/madumlao/madumlao-profile "$APP_DIR"
+fi
+
+echo "Set pwd to $APP_DIR"
+cd "$APP_DIR"
+APP_DIR="$(pwd)"
 
 echo "Install zsh and friends"
 if sudo -l apt; then
@@ -62,7 +86,7 @@ IFS="$OLDIFS"
 
 echo "Install vim-nox and friends"
 if sudo -l apt; then
-  sudo apt install vim-nox git
+  sudo apt install vim-nox
 else
   echo "Unable to autoinstall vim-nox and friends, please install manually"
 fi

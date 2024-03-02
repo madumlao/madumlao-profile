@@ -1,6 +1,13 @@
 Git repo of my personal shell profile variables
 
 ## Installing
+### Quick Install
+
+```
+curl https://raw.githubusercontent.com/madumlao/madumlao-profile/master/install.sh | bash
+```
+
+### Manual Install
 Copy this directory somewhere in your home directory. The directory should be persistent, so probably keep this in your "projects" directory or somewhere similar. If in doubt, you can keep this under `.local/share/madumlao-profile`.
 
 Next, run the `install.sh` script. It should backup your existing profile and replace it with symlinks to this version.
