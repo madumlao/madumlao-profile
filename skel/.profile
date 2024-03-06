@@ -93,7 +93,7 @@ if [ -z "$PYENV_DISABLE" ] && [ -d "$PYENV_ROOT/bin" ]; then
 	if [ "$PYENV_MAJOR_VERSION" -gt 1 ]; then
 		eval "$(pyenv init --path)"
 	fi
-	eval "$(pyenv init -|grep -v '^echo')"
+	eval "$(pyenv init -)"
 fi
 
 # perl
