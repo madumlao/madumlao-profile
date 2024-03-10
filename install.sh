@@ -9,14 +9,14 @@ else
 fi
 
 echo "Run an apt update"
-if sudo -l apt; then
+if sudo -l apt > /dev/null; then
   sudo apt update
 else
   echo "Unable to run apt commands, please install manually"
 fi
 
 echo "Install git and friends"
-if sudo -l apt; then
+if sudo -l apt > /dev/null; then
   sudo apt install git
 else
   echo "Unable to autoinstall git and friends, please install manually"
@@ -33,7 +33,7 @@ cd "$APP_DIR"
 APP_DIR="$(pwd)"
 
 echo "Install zsh and friends"
-if sudo -l apt; then
+if sudo -l apt > /dev/null; then
   sudo apt install zsh command-not-found
 else
   echo "Unable to autoinstall zsh and friends, please install manually"
@@ -85,7 +85,7 @@ done
 IFS="$OLDIFS"
 
 echo "Install vim-nox and friends"
-if sudo -l apt; then
+if sudo -l apt > /dev/null; then
   sudo apt install vim-nox
 else
   echo "Unable to autoinstall vim-nox and friends, please install manually"
